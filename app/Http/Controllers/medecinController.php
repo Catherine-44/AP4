@@ -57,6 +57,7 @@ class medecinController extends Controller
             "prenom"=>"required",
             "adresse"=>"required",
             "tel"=>"required",
+            "specialiteComplementaire",
             "departement"=>"required"
 
         ]);
@@ -67,30 +68,26 @@ class medecinController extends Controller
             "adresse"=>$request->adresse,
             "tel"=>$request->tel,
             "departement"=>$request->departement,
+            "specialiteComplementaire"=>$request->specialiteComplementaire
+
         ]);
 
         return back()->with("success", "Medecin ajouté avec succès !");
     }
 
-    public function update(Request $request, Medecin $medecins) {
+    public function update(Request $request, Medecin $medecin) {
 
         $request->validate([
             "nom"=>"required",
             "prenom"=>"required",
             "adresse"=>"required",
             "tel"=>"required",
+            "specialiteComplementaire",
             "departement"=>"required",
-            "specialiteComplementaire"
 
         ]);
 
-        $medecins->update([
-            "nom"=>$request->nom,
-            "prenom"=>$request->prenom,
-            "adresse"=>$request->adresse,
-            "tel"=>$request->tel,
-            "departement"=>$request->departement,
-        ]);
+        $medecin->update($request->all());
 
         return back()->with("success", "Medecin mis à jour avec succès !");
     }

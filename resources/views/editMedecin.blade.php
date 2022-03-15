@@ -21,9 +21,10 @@
                 @endforeach
             </ul>
         @endif
-        <form style="width: 65%" method="GET" action="{{route('medecin.changer', ['medecin'=>$medecin->id])}}">
+        <form style="width: 65%" method="POST" action="{{route('medecin.update', $medecin->id)}}">
 
             @csrf
+            @method('PUT')
 
             <input type="hidden" name="_method" value="put">
 
@@ -49,7 +50,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Spécialité</label>
-                <input type="text" class="form-control" name="specialiteComplementaire" value="{{$medecin->specialiteComplementaire}}">
+                <input type="text" class="form-control" name="specialiteComplementaire" value="{{$medecin->specialiteComplementaire}}" >
             </div>
             <button type="submit" class="btn btn-primary">Modifier</button>
             <a href="{{ route('home') }}" class="btn btn-danger">Annuler</a>

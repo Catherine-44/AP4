@@ -46,9 +46,10 @@
                 <input type="tel" class="form-control" name="tel">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Spécialité</label>
+                <label for="exampleInputEmail1" class="form-label">Spécialité</label>
                 <input type="text" class="form-control" name="specialiteComplementaire">
             </div>
+
             <button type="submit" class="btn btn-primary">Ajouter</button>
             <a href="{{ route('home') }}" class="btn btn-danger">Annuler</a>
         </form>

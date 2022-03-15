@@ -9,7 +9,7 @@ class medecin extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["id", "nom", "prenom", "adresse", "tel", "specialiteComplementaire", "departement"];
+    protected $fillable = ["id", "nom", "prenom", "adresse", "tel", "departement", "specialiteComplementaire"];
 
     public $timestamps = false;
 }
