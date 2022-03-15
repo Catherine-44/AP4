@@ -21,7 +21,7 @@ Route::get('/', function () {
 // Route::get('/medecin', [medecinController::class, "index"])->name("medecin");
 Route::get('/medecinnom', [medecinController::class, "recherchenom"])->name("medecinnom");
 Route::get('/medecindep', [medecinController::class, "recherchedep"])->name("medecindep");
-Route::get('/medecinspecd', [medecinController::class, "recherchespe"])->name("medecinspe");
+Route::get('/medecinspe', [medecinController::class, "recherchespe"])->name("medecinspe");
 
 Route::get('/medecin/create', [medecinController::class, "create"])->name("medecin.create");
 Route::post('/medecin/ajouter', [medecinController::class, "ajouter"])->name("medecin.ajouter");

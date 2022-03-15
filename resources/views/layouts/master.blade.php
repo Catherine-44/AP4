@@ -65,7 +65,11 @@
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="{{ route("medecindep") }}">Médecin par département</a>
-          </li>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ route("medecinspe") }}">Médecin par spécialité</a>
+        </li>
+
 
         @if (Route::has('login'))
             <div class="top-right links">

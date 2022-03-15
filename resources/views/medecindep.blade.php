@@ -45,6 +45,7 @@
                 <th scope="col">Prénom</th>
                 <th scope="col">Adresse</th>
                 <th scope="col">Département</th>
+                <th scope="col">Spécialité</th>
             </tr>
             </thead>
             <tbody>
@@ -56,6 +57,7 @@
                 <td>{{$medecin->prenom}}</td>
                 <td>{{$medecin->adresse}}</td>
                 <td>{{$medecin->departement}}</td>
+                <td>{{$medecin->specialiteComplementaire}}</td>
                 <td>
                     <a href="{{route('medecin.edit', ['medecin'=>$medecin->id])}}" class="btn btn-info">Editer</a>
 

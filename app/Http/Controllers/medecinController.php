@@ -40,6 +40,22 @@ class medecinController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function recherchespe(Request $request) {
+        $medecins = medecin::where([
+            ['specialiteComplementaire', '!=', Null],
+            [function ($query) use ($request) {
+                if (($term2 =$request->term2)) {
+                    $query->orWhere('specialiteComplementaire', 'LIKE', '%' .$term2. '%')->get();
+                }
+            }]
+        ])
+            ->orderBy("specialiteComplementaire", "asc")
+            ->paginate(20);
+        // $medecins = medecin::orderBy("departement","asc")->paginate(20);
+        return view('medecinspe', compact("medecins"))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
 
     public function create() {
         $medecins = medecin::all();

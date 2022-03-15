@@ -4,13 +4,13 @@
 <br>
 <div>
     <div class="mx-auto pull-right">
-        <div class="">
-            <form action="{{ route('medecinnom') }}" method="GET" role="search">
+        <div>
+            <form action="{{ route('medecinspe') }}" method="GET" role="search">
 
                 <div class="input-group">
 
-                    <input type="text" class="form-control mr-2" name="term" placeholder="Rechercher medecins par son nom" id="term">
-                    <a href="{{ route('medecinnom') }}" class=" mt-1">
+                    <input type="text" class="form-control mr-2" name="term2" placeholder="Rechercher un medecin par sa spécialité" id="term2">
+                    <a href="{{ route('medecinspe') }}" class=" mt-1">
                     </a>
                     <span class="input-group-btn mr-5 mt-1" >
                         <button class="btn btn-primary" type="submit" title="Search medecins">
@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <h3 class="border-bottom pb-2 mb-4">Liste des médecins par nom</h3>
+    <h3 class="border-bottom pb-2 mb-4">Liste des médecins par spécialités</h3>
 
     <div class="mt-4">
         <div class="d-flex justify-content-between mg-4">
@@ -39,25 +39,25 @@
 
         <table class="table table-bordered table-hover">
             <thead>
-                <tr>
-                    <th scope="col">#id</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Prénom</th>
-                    <th scope="col">Adresse</th>
-                    <th scope="col">Département</th>
-                    <th scope="col">Spécialité</th>
-                </tr>
-                </thead>
-                <tbody>
-                    @foreach ($medecins as $medecin)
+            <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Département</th>
+                <th scope="col">Spécialité</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach ($medecins as $medecin)
 
-                <tr>
-                    <th scope="row">{{$medecin->id}}</th>
-                    <td>{{$medecin->nom}}</td>
-                    <td>{{$medecin->prenom}}</td>
-                    <td>{{$medecin->adresse}}</td>
-                    <td>{{$medecin->departement}}</td>
-                    <td>{{$medecin->specialiteComplementaire}}</td>
+            <tr>
+                <th scope="row">{{$medecin->id}}</th>
+                <td>{{$medecin->nom}}</td>
+                <td>{{$medecin->prenom}}</td>
+                <td>{{$medecin->adresse}}</td>
+                <td>{{$medecin->departement}}</td>
+                <td>{{$medecin->specialiteComplementaire}}</td>
                 <td>
                     <a href="{{route('medecin.edit', ['medecin'=>$medecin->id])}}" class="btn btn-info">Editer</a>
 
