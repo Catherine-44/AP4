@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <h3 class="border-bottom pb-2 mb-4">Liste des médecins par spécialités</h3>
+    <h3 class="border-bottom pb-2 mb-4">Liste des médecins par spécialité</h3>
 
     <div class="mt-4">
         <div class="d-flex justify-content-between mg-4">

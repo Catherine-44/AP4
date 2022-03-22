@@ -8,13 +8,7 @@
             <form action="{{ route('medecindep') }}" method="GET" role="search">
 
                 <div class="input-group">
-                    <select class="form-control">
-                        <option value=""></option>
-                        @foreach ($medecins as $medecin)
-                        <option value="{{$medecin->id}}">{{ $medecin->departement }}</option>
-                        @endforeach
-                    </select>
-                    {{-- <input type="number" class="form-control mr-2" name="term1" placeholder="Rechercher medecins par son département" id="term1"> --}}
+                    <input type="number" class="form-control mr-2" name="term1" placeholder="Rechercher medecins par son département" id="term1">
                     <a href="{{ route('medecindep') }}" class=" mt-1"></a>
                     <span class="input-group-btn mr-5 mt-1" >
                         <button class="btn btn-primary" type="submit" title="Search medecins">
