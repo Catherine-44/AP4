@@ -30,6 +30,9 @@ Route::get('/medecin/{medecin}', [medecinController::class, "edit"])->name("mede
 Route::delete('/medecin/{medecin}', [medecinController::class, "delete"])->name("medecin.supprimer");
 Route::put('/medecin/{medecin}', [medecinController::class, "update"])->name("medecin.update");
 
+// Route::get('/medecindep', [departementController::class, "recherchedep"])->name("medecindep");
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

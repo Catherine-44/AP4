@@ -13,6 +13,7 @@ class CreateMedecinsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('medecins');
         Schema::create('medecins', function (Blueprint $table) {
             $table->integer('id', true);
             $table->string('nom', 30);
@@ -20,7 +21,9 @@ class CreateMedecinsTable extends Migration
             $table->string('adresse', 80);
             $table->string('tel', 15)->nullable();
             $table->string('specialiteComplementaire', 50)->nullable();
-            $table->integer('departement');
+            $table->unsignedBigInteger('departement');
+            $table->foreign('departement')->references('id')->on('departements');
+            Schema::disableForeignKeyConstraints();
         });
     }
 
